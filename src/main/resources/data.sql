@@ -1,13 +1,11 @@
+insert into automobile (id,customer,model,color) values
+(1,'bmw', 'm3', 'grigio');
 
-insert into Automobile (id,marca,modello,colore) values
-(1,'BMW', 'M3', 'Grigio');
+insert into automobile (id,customer,model,color) values
+(2,'peugeot', '208', 'blu');
 
-insert into Automobile (id,marca,modello,colore) values
-(2,'Peugeot', '208', 'Blu');
+insert into automobile (id,customer,model,color) values
+(3,'fiat', '500e', 'nero');
 
-insert into Automobile (id,marca,modello,colore) values
-(3,'FIAT', '500e', 'Nero');
-
-insert into Automobile (id,marca,modello,colore) values
-(4,'Audi', 'A1', 'Giallo');
-
+insert into automobile (id,customer,model,color) values
+(4,'audi', 'a1', 'giallo');

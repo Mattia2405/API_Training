@@ -8,17 +8,20 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Automobile")
+@Table(name = "automobile")
 public class Automobile {
     @Id
     @GeneratedValue
     protected Long id;
-    @Column(name = "marca")
-    protected String marca;
-    @Column(name = "modello")
-    protected String modello;
-    @Column(name = "colore")
-    protected String colore;
+
+    @Column(name = "customer")       //binding con database
+    protected String customer;
+
+    @Column(name = "model")
+    protected String model;
+    
+    @Column(name = "color")
+    protected String color;
 
     
 
@@ -27,18 +30,18 @@ public class Automobile {
         super();
     }
 
-    public Automobile(Long id, String marca, String modello, String colore){
+    public Automobile(Long id, String customer, String model, String color){
         super();
         this.id = id;
-        this.marca = marca;
-        this.modello = modello;
-        this.colore = colore;
+        this.customer = customer;
+        this.model = model;
+        this.color = color;
     }
 
-    public Automobile(Long id, String marca){
+    public Automobile(Long id, String customer){
         super();
         this.id = id;
-        this.marca = marca;
+        this.customer = customer;
     }
 
     public void setId(Long id){
@@ -49,32 +52,34 @@ public class Automobile {
         return this.id;
     } 
 
-    public void setMarca(String marca){
-        this.marca = marca;
+    public void setCustomer(String customer){
+        this.customer = customer;
     }
 
-    public String getMarca(){
-        return this.marca;
+    public String getCustomer(){
+        return this.customer;
     }
 
-    public void setModello(String modello){
-        this.modello = modello;
+    public void setModel(String model){
+        this.model = model;
     }
 
-    public String getModello(){
-        return this.modello;
+    public String getModel(){
+        return this.model;
     }
 
-    public void setColore(String colore){
-        this.colore = colore;
+    public void setColor(String color){
+        this.color = color;
     }
 
-    public String getColore(){
-        return this.colore;
+    public String getColor(){
+        return this.color;
     }
 
     @Override
     public String toString(){
-        return String.format("Automobile[id=%s, marca=%s, modello=%s, colore=%s]", id, marca, modello, colore);
+        return String.format("Automobile[id=%s, customer=%s, model=%s, color=%s]", id, customer, model, color);
     }
+
+   
 }
