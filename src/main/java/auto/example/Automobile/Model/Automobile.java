@@ -1,9 +1,13 @@
 package auto.example.Automobile.Model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -23,8 +27,12 @@ public class Automobile {
     @Column(name = "color")
     protected String color;
 
+    @ManyToOne
+    @JoinColumn(name = "idfuel")
+    protected Fuel fuel;
     
 
+    
 
     public Automobile(){
         super();
@@ -51,7 +59,7 @@ public class Automobile {
     public Long getId(){
         return this.id;
     } 
-
+    
     public void setCustomer(String customer){
         this.customer = customer;
     }
@@ -76,10 +84,20 @@ public class Automobile {
         return this.color;
     }
 
-    @Override
-    public String toString(){
-        return String.format("Automobile[id=%s, customer=%s, model=%s, color=%s]", id, customer, model, color);
+    public void setFuel(Fuel fuel){
+        this.fuel = fuel;
     }
 
+    public Fuel getFuel(){
+        return this.fuel;
+    }
+    
+
+    
    
+
+    @Override
+    public String toString(){
+        return String.format("Automobile[id=%s, customer=%s, model=%s, color=%s, idfuel=%s]", id, customer, model, color, fuel);
+    }           
 }
